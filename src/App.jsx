@@ -6,6 +6,8 @@ import Projects from "./components/Projects";
 import Process from "./components/Process";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Automation from "./components/Automation";
+import Testimonials from "./components/Testimonals";
 function App(){
   return(
     <div>
@@ -15,7 +17,9 @@ function App(){
       <About />
       <Services />
       <Projects />
+      <Automation />
       <Process />
+      <Testimonials />
       <Contact />
       <Footer />
     </div>
