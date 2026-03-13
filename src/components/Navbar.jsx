@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 
 function Navbar() {
 
   const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+  useEffect(() => {
+    document.documentElement.classList.remove("dark")
+  }, []);
 
-    if (!darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+  const toggleDarkMode = () => {
+  const newMode = !darkMode
+  setDarkMode(newMode)
+
+  if (newMode) {
+    document.documentElement.classList.add("dark")
+  } else {
+    document.documentElement.classList.remove("dark")
+   }
   };
 
   return (
@@ -35,7 +40,7 @@ function Navbar() {
         onClick={toggleDarkMode}
         className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition"
       >
-        Toggle
+        {darkMode ? "Light Mode" : "Dark Mode"}
       </button>
 
     </nav>
